@@ -1,0 +1,754 @@
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+:root {
+    /* Paleta de colores suaves y elegantes */
+    --color-primary: #5DADE2; /* Azul cielo suave */
+    --color-secondary: #8DCCAD; /* Verde menta */
+    --color-tertiary: #A8DADC; /* Azul verdoso claro */
+    --color-accent: #E5BB4B; /* Amarillo mostaza suave */
+    --color-text: #2F4F4F; /* Gris oscuro tenue */
+    --color-bg: #F0F2F5; /* Gris muy claro */
+    --color-card-bg: #FFFFFF; /* Blanco puro */
+    --color-border: #D3DCE6; /* Gris azulado claro */
+    --color-button-hover: #4A90E2; /* Azul más vibrante al pasar el ratón */
+    --color-button-active: #3C7BBF; /* Azul más oscuro al hacer click */
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita el scroll horizontal */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--color-primary);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 3.2em;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 15px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+h3 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+p {
+    font-size: 1.1em;
+}
+
+/* Header */
+.main-header {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-tertiary));
+    color: var(--color-card-bg);
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 1s ease-out;
+}
+
+.main-header p {
+    font-size: 1.3em;
+    margin-top: 15px;
+    font-weight: 300;
+}
+
+/* Secciones de Contenido */
+.content-section {
+    background-color: var(--color-card-bg);
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Galería de Imágenes */
+.image-gallery {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    height: 450px; /* Altura fija para la galería */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg); /* Fondo de seguridad */
+}
+
+.image-item.active {
+    opacity: 1;
+}
+
+.image-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el espacio */
+    border-radius: 10px;
+}
+
+.image-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(var(--color-text-rgb), 0.7); /* Usando rgba para transparencia */
+    color: var(--color-card-bg);
+    padding: 20px;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+}
+
+.image-item:hover .image-info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.image-info h3 {
+    color: var(--color-accent);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.image-info p {
+    font-size: 0.95em;
+    margin-bottom: 0;
+}
+
+.gallery-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.gallery-button {
+    background-color: var(--color-secondary);
+    color: var(--color-card-bg);
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-button:hover {
+    background-color: var(--color-button-hover);
+    transform: scale(1.05);
+}
+
+.gallery-button:active {
+    transform: scale(0.95);
+    background-color: var(--color-button-active);
+}
+
+/* Videos Interactivos */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.video-card {
+    background-color: var(--color-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.video-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(var(--color-primary-rgb), 0.85); /* Usando rgba para transparencia */
+    color: var(--color-card-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-card:hover .video-overlay {
+    opacity: 1;
+}
+
+.video-overlay h3 {
+    color: var(--color-accent);
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.6em;
+}
+
+.video-overlay p {
+    font-size: 0.95em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.play-button {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.play-button:hover {
+    background-color: #F0C96F;
+    transform: scale(1.05);
+}
+
+/* Modal de Video */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: var(--color-card-bg);
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: zoomIn 0.3s ease-out;
+}
+
+.modal-content h3 {
+    color: var(--color-primary);
+    margin-top: 0;
+    text-align: center;
+}
+
+.modal-content p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.close-button {
+    color: var(--color-text);
+    font-size: 2.5em;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+#youtube-player {
+    width: 100%;
+    height: 500px; /* Altura del reproductor de YouTube */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Juegos */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.game-card {
+    background-color: var(--color-bg);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.game-card h3 {
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.game-card p {
+    font-size: 1em;
+    margin-bottom: 25px;
+}
+
+.game-button {
+    background-color: var(--color-secondary);
+    color: var(--color-card-bg);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.game-button:hover {
+    background-color: var(--color-button-hover);
+    transform: scale(1.05);
+}
+
+.game-button:active {
+    transform: scale(0.95);
+    background-color: var(--color-button-active);
+}
+
+.game-content {
+    display: none; /* Ocultar por defecto */
+    margin-top: 25px;
+    text-align: left;
+    border-top: 1px solid var(--color-border);
+    padding-top: 20px;
+}
+
+.game-content.active {
+    display: block;
+}
+
+/* Quiz */
+.quiz-question {
+    background-color: var(--color-bg);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-border);
+    display: none;
+}
+
+.quiz-question.active {
+    display: block;
+}
+
+.quiz-question p {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.quiz-question label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 1.05em;
+    transition: color 0.2s ease;
+}
+
+.quiz-question label:hover {
+    color: var(--color-secondary);
+}
+
+.quiz-question input[type="radio"] {
+    margin-right: 10px;
+    accent-color: var(--color-secondary);
+}
+
+.quiz-next-button, .quiz-restart-button {
+    background-color: var(--color-primary);
+    color: var(--color-card-bg);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-next-button:hover, .quiz-restart-button:hover {
+    background-color: var(--color-button-hover);
+}
+
+.feedback {
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.feedback.correct {
+    color: var(--color-secondary);
+}
+
+.feedback.incorrect {
+    color: #E74C3C; /* Rojo */
+}
+
+.quiz-results {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    display: none;
+}
+
+.quiz-results.active {
+    display: block;
+}
+
+/* Eco-Memory Game */
+.memory-game {
+    text-align: center;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.memory-card {
+    width: 100px; /* Ajusta según el diseño */
+    height: 100px; /* Ajusta según el diseño */
+    background-color: var(--color-secondary);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    color: var(--color-card-bg);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.memory-card.flipped {
+    background-color: var(--color-primary);
+    transform: rotateY(180deg);
+}
+
+.memory-card.matched {
+    background-color: var(--color-accent);
+    cursor: default;
+    box-shadow: 0 0 15px var(--color-accent);
+}
+
+.memory-card .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.memory-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.memory-card .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.memory-card .card-back {
+    background-color: var(--color-secondary);
+    color: var(--color-card-bg);
+    font-size: 2.5em;
+    /* Puedes usar un icono o texto simple para la parte trasera */
+    content: '?';
+}
+
+.memory-card .card-front {
+    background-color: var(--color-primary);
+    color: var(--color-card-bg);
+    transform: rotateY(180deg);
+    font-size: 2.5em; /* Tamaño del icono/emoji */
+}
+
+#memory-status {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: var(--color-text);
+}
+
+.memory-restart-button {
+    background-color: var(--color-primary);
+    color: var(--color-card-bg);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.memory-restart-button:hover {
+    background-color: var(--color-button-hover);
+}
+
+
+/* Footer */
+.main-footer {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+
+    .image-gallery {
+        height: 350px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #youtube-player {
+        height: 300px;
+    }
+
+    .game-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 450px;
+    }
+
+    .memory-card {
+        width: 80px;
+        height: 80px;
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+
+    .main-header {
+        padding: 40px 15px;
+    }
+
+    .image-gallery {
+        height: 280px;
+    }
+
+    .image-info {
+        padding: 15px;
+    }
+
+    .image-info h3 {
+        font-size: 1.3em;
+    }
+
+    .image-info p {
+        font-size: 0.85em;
+    }
+
+    .gallery-button {
+        padding: 10px 15px;
+        font-size: 1.2em;
+    }
+
+    .video-overlay h3 {
+        font-size: 1.3em;
+    }
+
+    .video-overlay p {
+        font-size: 0.8em;
+    }
+
+    .play-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    #youtube-player {
+        height: 250px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .game-card h3 {
+        font-size: 1.7em;
+    }
+
+    .game-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .memory-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 300px;
+    }
+
+    .memory-card {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8em;
+    }
+}
+
+/* Helper para RGBA en JS (opcional, si necesitas manipular colores con JS) */
+/* NOTA: Para este CSS, he optado por usar valores directos en rgba donde es posible.
+   Si necesitas un color que cambie en tiempo real con JS y se aplique como rgba,
+   tendrías que definir las variables de color en formato RGB en el CSS y luego convertirlas en JS.
+   Ejemplo:
+   --color-primary-rgb: 93, 173, 226; (93, 173, 226 son los valores RGB de #5DADE2)
+*/
