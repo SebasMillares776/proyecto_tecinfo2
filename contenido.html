@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un Futuro Verde - Contenido Interactivo</title>
+    <link rel="stylesheet" href="contenido.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <h1>Explora un Futuro Verde</h1>
+        <p>Inspiración, conocimiento y diversión para un planeta más sostenible.</p>
+    </header>
+
+    <main class="container">
+        <section class="content-section" id="imagenes">
+            <h2>Galería de Inspiración Visual</h2>
+            <div class="image-gallery">
+                <div class="image-item active">
+                    <img src="https://via.placeholder.com/600x400/A8DADC/2F4F4F?text=Energ%C3%ADa+Renovable" alt="Energía Renovable">
+                    <div class="image-info">
+                        <h3>El Poder del Sol y el Viento</h3>
+                        <p>Descubre cómo las energías renovables están transformando nuestro mundo. Desliza para ver más.</p>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="https://via.placeholder.com/600x400/98C1D9/2F4F4F?text=Ciudades+Sostenibles" alt="Ciudades Sostenibles">
+                    <div class="image-info">
+                        <h3>Ciudades que Respiran</h3>
+                        <p>Imagina ciudades verdes con espacios naturales y transporte ecológico. ¡Es posible!</p>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="https://via.placeholder.com/600x400/8DCCAD/2F4F4F?text=Vida+Sostenible" alt="Vida Sostenible">
+                    <div class="image-info">
+                        <h3>Pequeños Cambios, Gran Impacto</h3>
+                        <p>Consejos prácticos para integrar la sostenibilidad en tu día a día. ¡Empieza hoy mismo!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-controls">
+                <button class="gallery-button prev" aria-label="Anterior">&#10094;</button>
+                <button class="gallery-button next" aria-label="Siguiente">&#10095;</button>
+            </div>
+        </section>
+
+        <section class="content-section" id="videos">
+            <h2>Videos Interactivos: Aprende y Participa</h2>
+            <div class="video-grid">
+                <div class="video-card" data-video-id="dQw4w9WgXcQ" data-title="La Importancia de Reciclar" data-description="Un video corto sobre por qué el reciclaje es crucial para un futuro verde.">
+                    <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Miniatura de video 1">
+                    <div class="video-overlay">
+                        <h3>La Importancia de Reciclar</h3>
+                        <p>Un video corto sobre por qué el reciclaje es crucial para un futuro verde.</p>
+                        <button class="play-button">Ver Video</button>
+                    </div>
+                </div>
+                <div class="video-card" data-video-id="L1B3lQjZ6e8" data-title="Innovación en Energía Solar" data-description="Descubre los últimos avances en tecnología solar y su impacto.">
+                    <img src="https://img.youtube.com/vi/L1B3lQjZ6e8/hqdefault.jpg" alt="Miniatura de video 2">
+                    <div class="video-overlay">
+                        <h3>Innovación en Energía Solar</h3>
+                        <p>Descubre los últimos avances en tecnología solar y su impacto.</p>
+                        <button class="play-button">Ver Video</button>
+                    </div>
+                </div>
+                <div class="video-card" data-video-id="M0sU8X_qE0I" data-title="Construyendo un Futuro Sostenible" data-description="Un documental inspirador sobre proyectos ecológicos alrededor del mundo.">
+                    <img src="https://img.youtube.com/vi/M0sU8X_qE0I/hqdefault.jpg" alt="Miniatura de video 3">
+                    <div class="video-overlay">
+                        <h3>Construyendo un Futuro Sostenible</h3>
+                        <p>Un documental inspirador sobre proyectos ecológicos alrededor del mundo.</p>
+                        <button class="play-button">Ver Video</button>
+                    </div>
+                </div>
+            </div>
+            <div id="video-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h3 id="modal-video-title"></h3>
+                    <div id="youtube-player"></div>
+                    <p id="modal-video-description"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="juegos">
+            <h2>Juega y Aprende: Desafíos Verdes</h2>
+            <div class="game-grid">
+                <div class="game-card">
+                    <h3>Quiz del Reciclaje</h3>
+                    <p>Pon a prueba tus conocimientos sobre reciclaje con este divertido quiz interactivo.</p>
+                    <button class="game-button" data-game-id="quiz-reciclaje">Jugar Quiz</button>
+                    <div class="game-content" id="quiz-reciclaje">
+                        <div class="quiz-question active" data-question="1">
+                            <p>¿Qué material *no* se recicla comúnmente en el contenedor azul?</p>
+                            <label><input type="radio" name="q1" value="a"> Papel</label><br>
+                            <label><input type="radio" name="q1" value="b"> Cartón</label><br>
+                            <label><input type="radio" name="q1" value="c"> Plástico de un solo uso</label><br>
+                            <label><input type="radio" name="q1" value="d"> Envases de tetrabrik</label><br>
+                            <button class="quiz-next-button">Siguiente</button>
+                            <p class="feedback"></p>
+                        </div>
+                        <div class="quiz-question" data-question="2">
+                            <p>¿Cuál de estos es un ejemplo de energía renovable?</p>
+                            <label><input type="radio" name="q2" value="a"> Carbón</label><br>
+                            <label><input type="radio" name="q2" value="b"> Gas natural</label><br>
+                            <label><input type="radio" name="q2" value="c"> Energía solar</label><br>
+                            <label><input type="radio" name="q2" value="d"> Petróleo</label><br>
+                            <button class="quiz-next-button">Siguiente</button>
+                             <p class="feedback"></p>
+                        </div>
+                        <div class="quiz-results">
+                            <h3>¡Quiz Terminado!</h3>
+                            <p id="quiz-score"></p>
+                            <button class="quiz-restart-button">Jugar de Nuevo</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <h3>Eco-Memory</h3>
+                    <p>Encuentra los pares de imágenes relacionadas con la sostenibilidad.</p>
+                    <button class="game-button" data-game-id="eco-memory">Jugar Eco-Memory</button>
+                    <div class="game-content memory-game" id="eco-memory">
+                        <div class="memory-grid">
+                            </div>
+                        <p id="memory-status"></p>
+                        <button class="memory-restart-button">Reiniciar Juego</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Un Futuro Verde. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="contenido.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
