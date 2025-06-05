@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const canvaButton = document.getElementById('canvaButton');
 
     // URL del enlace a Canva
-    const canvaURL = 'https://www.canva.com/your-canva-project-link'; // ¡IMPORTANTE: REEMPLAZA ESTO CON TU ENLACE REAL DE CANVA!
+    const canvaURL = 'https://www.canva.com/design/DAGpfVsA094/BJ9sTsuOOZXkS2z-yqt2Jw/edit?utm_content=DAGpfVsA094&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton'; // ¡IMPORTANTE: REEMPLAZA ESTO CON TU ENLACE REAL DE CANVA!
 
     if (canvaButton) {
         canvaButton.addEventListener('click', function() {
