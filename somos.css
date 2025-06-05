@@ -3,13 +3,13 @@ body {
     font-family: 'Arial', sans-serif; /* Fuente moderna y legible */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Color neutro de fondo */
+    background-color: #f4f4f4; /* Color azul fosforescente de fondo */
     color: #333; /* Color de texto principal */
     line-height: 1.6;
 }
 
 header {
-    background-color: #ffffff; /* Blanco neutro para el encabezado */
+    background-color: #ffffff; /* Verde pastel para el encabezado */
     padding: 20px;
     border-bottom: 1px solid #ddd;
     text-align: center;
